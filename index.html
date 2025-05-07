@@ -4,9 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pegasus Power - Energie neu definiert</title>
+  
+  <!-- External Resources -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  
+  <!-- Custom Styles -->
   <style>
+    /* Background Gradients */
     .bg-pegasus-hero {
       background: linear-gradient(135deg, #1e3a8a, #6b21a8, #4c1d95);
     }
@@ -19,6 +24,8 @@
     .bg-pegasus-story {
       background: linear-gradient(135deg, #0c4a6e, #1e40af, #164e63);
     }
+
+    /* Base Styles */
     html {
       scroll-behavior: smooth;
     }
@@ -27,6 +34,8 @@
       background-position: center;
       background-size: cover;
     }
+
+    /* Card Styles */
     .glass-card {
       background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(12px);
@@ -40,6 +49,8 @@
       box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
       opacity: 0.95;
     }
+
+    /* Flavor Card Variants */
     .classic-card {
       border-color: rgba(255, 255, 255, 0.4);
       background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(75, 85, 99, 0.25));
@@ -48,6 +59,7 @@
       border-color: #ffffff;
       box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
     }
+
     .red-card {
       border-color: rgba(239, 68, 68, 0.4);
       background: linear-gradient(135deg, rgba(239, 68, 68, 0.15), rgba(127, 29, 29, 0.25));
@@ -56,6 +68,7 @@
       border-color: #ef4444;
       box-shadow: 0 0 20px rgba(239, 68, 68, 0.6);
     }
+
     .tropical-card {
       border-color: rgba(234, 179, 8, 0.4);
       background: linear-gradient(135deg, rgba(234, 179, 8, 0.15), rgba(161, 98, 7, 0.25));
@@ -64,6 +77,7 @@
       border-color: #eab308;
       box-shadow: 0 0 20px rgba(234, 179, 8, 0.6);
     }
+
     .citrus-card {
       border-color: rgba(249, 115, 22, 0.4);
       background: linear-gradient(135deg, rgba(249, 115, 22, 0.15), rgba(154, 52, 18, 0.25));
@@ -72,6 +86,7 @@
       border-color: #f97316;
       box-shadow: 0 0 20px rgba(249, 115, 22, 0.6);
     }
+
     .sunbeach-card {
       border-color: rgba(236, 72, 153, 0.4);
       background: linear-gradient(135deg, rgba(236, 72, 153, 0.15), rgba(190, 24, 93, 0.25));
@@ -80,6 +95,8 @@
       border-color: #ec4899;
       box-shadow: 0 0 20px rgba(236, 72, 153, 0.6);
     }
+
+    /* Animation Classes */
     .fade-in {
       opacity: 0;
       transform: translateY(20px);
@@ -89,6 +106,7 @@
       opacity: 1;
       transform: translateY(0);
     }
+
     .slide-in {
       opacity: 0;
       transform: translateX(-20px);
@@ -98,6 +116,7 @@
       opacity: 1;
       transform: translateX(0);
     }
+
     .scale-in {
       opacity: 0;
       transform: scale(0.9);
@@ -107,6 +126,8 @@
       opacity: 1;
       transform: scale(1);
     }
+
+    /* Loading Placeholders */
     .skeleton-can {
       background: #d1d5db;
       animation: pulse 1.5s infinite;
@@ -123,19 +144,14 @@
       margin: 0 auto;
       border-radius: 8px;
     }
-    .logo {
-      background: #d1d5db;
-      animation: pulse 1.5s infinite;
-      width: 180px;
-      height: 90px;
-      margin: 0 auto;
-      border-radius: 8px;
-    }
+
+    /* Animations */
     @keyframes pulse {
       0% { opacity: 1; }
       50% { opacity: 0.5; }
       100% { opacity: 1; }
     }
+
     .lightning-bolt {
       position: absolute;
       width: 2px;
@@ -144,30 +160,38 @@
       opacity: 0.6;
       animation: flash 1.8s infinite;
     }
+
     @keyframes flash {
       0%, 100% { opacity: 0; }
       50% { opacity: 0.9; }
     }
+
+    /* Interactive Elements */
     .zoom-image {
       transition: transform 0.4s ease;
     }
     .glass-card:hover .zoom-image {
       transform: scale(1.1);
     }
+
     .pulse-icon {
       animation: pulse-icon 2s infinite;
     }
+
     @keyframes pulse-icon {
       0% { transform: scale(1); }
       50% { transform: scale(1.1); }
       100% { transform: scale(1); }
     }
+
     .hover-scale {
       transition: transform 0.3s ease;
     }
     .hover-scale:hover {
       transform: scale(1.05);
     }
+
+    /* Responsive Adjustments */
     @media (max-width: 640px) {
       .parallax {
         background-attachment: scroll;
@@ -178,19 +202,26 @@
     }
   </style>
 </head>
+
 <body class="font-['Inter'] text-white bg-gray-900">
+  <!-- Hero Section -->
 <header class="bg-pegasus-hero min-h-screen flex flex-col justify-center items-center text-center px-4 sm:px-6 relative overflow-hidden">
   <div class="skeleton-logo mb-6 sm:mb-8 z-10"></div>
   <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-4 fade-in z-10">Pegasus Power</h1>
   <p class="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 fade-in z-10 max-w-xl sm:max-w-2xl">Zuckerfrei. Proteinreich. Elektrisierend.</p>
-  <a href="#flavors" class="bg-white text-blue-600 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:bg-blue-100 transition fade-in z-10 hover-scale">Sorten entdecken</a>
+    <div class="flex space-x-4 fade-in z-10">
+      <a href="#flavors" class="bg-white text-blue-600 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:bg-blue-100 transition hover-scale">Sorten entdecken</a>
+      <a href="shop.html" class="bg-blue-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:bg-blue-700 transition hover-scale">Jetzt kaufen</a>
+    </div>
   <div class="lightning-bolt" style="top: 15%; left: 10%; transform: rotate(45deg);"></div>
   <div class="lightning-bolt" style="top: 65%; right: 12%; transform: rotate(-30deg);"></div>
 </header>
 
+  <!-- Flavors Section -->
 <section id="flavors" class="py-12 sm:py-16 px-4 sm:px-6 bg-pegasus-flavors">
   <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center mb-8 sm:mb-12 fade-in">Unsere Geschmacksrichtungen</h2>
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 max-w-7xl mx-auto">
+      <!-- Classic Flavor -->
     <div class="glass-card classic-card rounded-xl overflow-hidden fade-in">
       <div class="h-48 sm:h-56 flex items-center justify-center">
         <div class="skeleton-can"></div>
@@ -200,33 +231,41 @@
         <p class="text-gray-300 text-sm sm:text-base slide-in">Kraftvoller Energieschub für jeden Moment.</p>
       </div>
     </div>
+
+      <!-- Cherry Kiss Flavor -->
     <div class="glass-card red-card rounded-xl overflow-hidden fade-in">
       <div class="h-48 sm:h-56 flex items-center justify-center">
         <div class="skeleton-can"></div>
       </div>
       <div class="p-4 sm:p-6">
-        <h3 class="text-xl sm:text-2xl font-bold mb-2 slide-in">Red Edition</h3>
+        <h3 class="text-xl sm:text-2xl font-bold mb-2 slide-in">Cherry Kiss</h3>
         <p class="text-gray-300 text-sm sm:text-base slide-in">Granatapfel-Kirsche, intensiv und belebend.</p>
       </div>
     </div>
+
+      <!-- Airfruit Flavor -->
     <div class="glass-card tropical-card rounded-xl overflow-hidden fade-in">
       <div class="h-48 sm:h-56 flex items-center justify-center">
         <div class="skeleton-can"></div>
       </div>
       <div class="p-4 sm:p-6">
-        <h3 class="text-xl sm:text-2xl font-bold mb-2 slide-in">Tropical</h3>
-        <p class="text-gray-300 text-sm sm:text-base slide-in">Ananas-Mango, exotisch und erfrischend.</p>
+        <h3 class="text-xl sm:text-2xl font-bold mb-2 slide-in">Airfruit</h3>
+        <p class="text-gray-300 text-sm sm:text-base slide-in">Ananas-Maracuja, exotisch und erfrischend.</p>
       </div>
     </div>
+
+      <!-- Solar Rush Flavor -->
     <div class="glass-card citrus-card rounded-xl overflow-hidden fade-in">
       <div class="h-48 sm:h-56 flex items-center justify-center">
         <div class="skeleton-can"></div>
       </div>
       <div class="p-4 sm:p-6">
-        <h3 class="text-xl sm:text-2xl font-bold mb-2 slide-in">Citrus</h3>
+        <h3 class="text-xl sm:text-2xl font-bold mb-2 slide-in">Solar Rush</h3>
         <p class="text-gray-300 text-sm sm:text-base slide-in">Orange-Zitrus, spritzig und vitalisierend.</p>
       </div>
     </div>
+
+      <!-- Sun Beach Flavor -->
     <div class="glass-card sunbeach-card rounded-xl overflow-hidden fade-in">
       <div class="h-48 sm:h-56 flex items-center justify-center">
         <div class="skeleton-can"></div>
@@ -239,11 +278,19 @@
   </div>
 </section>
 
+  <!-- Benefits Section -->
 <section id="benefits" class="py-12 sm:py-16 px-4 sm:px-6 bg-pegasus-benefits">
   <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center mb-8 sm:mb-12 fade-in">Warum Pegasus Power?</h2>
   <div class="max-w-5xl mx-auto text-center">
-    <p class="text-base sm:text-lg md:text-xl mb-8 sm:mb-12 fade-in max-w-xl sm:max-w-3xl mx-auto">Pegasus Power ist mehr als ein Energy Drink – es ist dein Schlüssel zu nachhaltiger Energie. Mit 20g Protein pro Dose, ohne Zucker und mit natürlichen Aromen unterstützt unser Drink deine Leistung, egal ob im Sport, im Alltag oder bei intensiven Herausforderungen.</p>
+      <p class="text-base sm:text-lg md:text-xl mb-8 sm:mb-12 fade-in max-w-xl sm:max-w-3xl mx-auto">
+        Pegasus Power ist mehr als ein Energy Drink – es ist dein Schlüssel zu nachhaltiger Energie. 
+        Mit 20g Protein pro Dose, ohne Zucker und mit natürlichen Aromen unterstützt unser Drink deine Leistung, 
+        egal ob im Sport, im Alltag oder bei intensiven Herausforderungen.
+      </p>
+      
+      <!-- Benefits Grid -->
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
+        <!-- Sugar Free Benefit -->
       <div class="space-y-4 scale-in">
         <svg class="w-12 sm:w-16 h-12 sm:h-16 mx-auto text-blue-400 pulse-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
           <path d="M12 22s8-4.5 8-10A8 8 0 0 0 4 12c0 5.5 8 10 8 10Z" />
@@ -251,6 +298,8 @@
         <h3 class="text-lg sm:text-xl md:text-2xl font-semibold text-white">Zuckerfrei</h3>
         <p class="text-gray-300 text-sm sm:text-base">Genieße pure Energie ohne Zucker oder künstliche Süßstoffe, für einen gesunden Boost.</p>
       </div>
+
+        <!-- Protein Rich Benefit -->
       <div class="space-y-4 scale-in" style="transition-delay: 200ms">
         <svg class="w-12 sm:w-16 h-12 sm:h-16 mx-auto text-yellow-400 pulse-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
           <path d="M13 10V3L4 14h7v7l9-11h-7Z" />
@@ -258,6 +307,8 @@
         <h3 class="text-lg sm:text-xl md:text-2xl font-semibold text-white">Proteinreich</h3>
         <p class="text-gray-300 text-sm sm:text-base">20g hochwertiges Protein pro Dose fördern Muskelaufbau und Regeneration.</p>
       </div>
+
+        <!-- Natural Flavors Benefit -->
       <div class="space-y-4 scale-in" style="transition-delay: 400ms">
         <svg class="w-12 sm:w-16 h-12 sm:h-16 mx-auto text-green-400 pulse-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
           <path d="M12 3C12 3 4 8 4 14s8 7 8 7 8-1 8-7-8-11-8-11Z" />
@@ -266,27 +317,50 @@
         <p class="text-gray-300 text-sm sm:text-base">Hergestellt mit natürlichen Zutaten für authentischen Geschmack und pure Frische.</p>
       </div>
     </div>
-    <button id="toggleDetails" class="bg-white text-blue-600 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:bg-blue-100 transition fade-in mt-8 sm:mt-12 hover-scale">Mehr erfahren</button>
+
+      <!-- Details Toggle -->
+      <button id="toggleDetails" class="bg-white text-blue-600 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:bg-blue-100 transition fade-in mt-8 sm:mt-12 hover-scale">
+        Mehr erfahren
+      </button>
+
+      <!-- Additional Details -->
     <div id="detailsContent" class="hidden mt-8 sm:mt-12 text-left max-w-xl sm:max-w-3xl mx-auto">
-      <p class="text-gray-200 text-sm sm:text-base md:text-lg mb-4 sm:mb-6 slide-in">Pegasus Power wurde entwickelt, um die Grenzen herkömmlicher Energy Drinks zu sprengen. Unsere einzigartige Formel liefert nicht nur Energie, sondern auch essenzielle Nährstoffe, die deinen Körper unterstützen. Ob vor dem Training, während eines langen Arbeitstages oder für einen schnellen Boost zwischendurch – Pegasus Power ist immer an deiner Seite.</p>
-      <p class="text-gray-200 text-sm sm:text-base md:text-lg slide-in">Mit fünf unvergleichlichen Geschmacksrichtungen, die von klassischer Power bis zu tropischer Erfrischung reichen, bietet Pegasus Power für jeden Moment die richtige Energie.</p>
+        <p class="text-gray-200 text-sm sm:text-base md:text-lg mb-4 sm:mb-6 slide-in">
+          Pegasus Power wurde entwickelt, um die Grenzen herkömmlicher Energy Drinks zu sprengen. 
+          Unsere einzigartige Formel liefert nicht nur Energie, sondern auch essenzielle Nährstoffe, 
+          die deinen Körper unterstützen. Ob vor dem Training, während eines langen Arbeitstages oder 
+          für einen schnellen Boost zwischendurch – Pegasus Power ist immer an deiner Seite.
+        </p>
+        <p class="text-gray-200 text-sm sm:text-base md:text-lg slide-in">
+          Mit fünf unvergleichlichen Geschmacksrichtungen, die von klassischer Power bis zu tropischer 
+          Erfrischung reichen, bietet Pegasus Power für jeden Moment die richtige Energie.
+        </p>
     </div>
   </div>
 </section>
 
+  <!-- Story Section -->
 <section id="story" class="py-12 sm:py-16 px-4 sm:px-6 bg-pegasus-story">
   <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center mb-8 sm:mb-12 fade-in">Unsere Geschichte</h2>
   <div class="max-w-5xl mx-auto text-center">
-    <p class="text-base sm:text-lg md:text-xl mb-8 sm:mb-12 fade-in max-w-xl sm:max-w-3xl mx-auto">Kaan und Stefan, zwei Schüler der HTL Hallein, hatten eine Vision: einen Energy Drink, der nicht nur wach macht, sondern auch stärkt. So entstand Pegasus Power – der erste Energy Drink mit Protein. Gemeinsam mit ihren Freunden Snox und Sheepex machten sie aus einer Idee Realität. Heute steht Pegasus Power für Energie, Fokus und Stärke.</p>
+      <p class="text-base sm:text-lg md:text-xl mb-8 sm:mb-12 fade-in max-w-xl sm:max-w-3xl mx-auto">
+        Kaan und Stefan, zwei Schüler der HTL Hallein, hatten eine Vision: einen Energy Drink, 
+        der nicht nur wach macht, sondern auch stärkt. So entstand Pegasus Power – der erste 
+        Energy Drink mit Protein. Gemeinsam mit ihren Freunden Snox und Sheepex machten sie 
+        aus einer Idee Realität. Heute steht Pegasus Power für Energie, Fokus und Stärke.
+      </p>
   </div>
 </section>
 
+  <!-- Footer -->
 <footer class="bg-gray-900 py-8 sm:py-12 px-4 sm:px-6 text-center">
   <div class="skeleton-logo mb-4 sm:mb-6"></div>
   <p class="text-gray-300 text-sm sm:text-base">© 2025 Pegasus Power. Alle Rechte vorbehalten.</p>
 </footer>
 
+  <!-- JavaScript -->
 <script>
+    // Intersection Observer for animations
   const fadeInElements = document.querySelectorAll('.fade-in, .slide-in, .scale-in');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -298,13 +372,18 @@
 
   fadeInElements.forEach(element => observer.observe(element));
 
+    // Details toggle functionality
   const toggleButton = document.getElementById('toggleDetails');
   const detailsContent = document.getElementById('detailsContent');
+    
   toggleButton.addEventListener('click', () => {
     detailsContent.classList.toggle('hidden');
-    toggleButton.textContent = detailsContent.classList.contains('hidden') ? 'Mehr erfahren' : 'Weniger anzeigen';
+      toggleButton.textContent = detailsContent.classList.contains('hidden') 
+        ? 'Mehr erfahren' 
+        : 'Weniger anzeigen';
   });
 
+    // Smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();

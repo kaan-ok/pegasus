@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classic - Pegasus Power</title>
+  
+  <!-- External Resources -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  
+  <!-- Custom Styles -->
+  <style>
+    .bg-pegasus-shop {
+      background: linear-gradient(135deg, #1e3a8a, #6b21a8, #4c1d95);
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+  </style>
+</head>
+
+<body class="font-['Inter'] text-white bg-gray-900">
+  <!-- Navigation -->
+  <nav class="bg-pegasus-shop py-4 px-6 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <a href="../index.html" class="text-2xl font-bold">Pegasus Power</a>
+      <div class="flex items-center space-x-6">
+        <a href="../index.html" class="hover:text-blue-300 transition">Home</a>
+        <a href="../shop.html" class="hover:text-blue-300 transition">Shop</a>
+        <div class="relative">
+          <button id="cartButton" class="hover:text-blue-300 transition">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+            <span id="cartBadge" class="cart-badge hidden">0</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Product Detail -->
+  <main class="max-w-7xl mx-auto px-4 py-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <!-- Product Image -->
+      <div class="glass-card rounded-xl overflow-hidden p-8">
+        <div class="h-96 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+          <div class="skeleton-can"></div>
+        </div>
+      </div>
+
+      <!-- Product Info -->
+      <div class="space-y-6">
+        <h1 class="text-4xl font-bold">Classic</h1>
+        <p class="text-2xl font-bold">€1.99</p>
+        <p class="text-gray-300">Kraftvoller Energieschub für jeden Moment. Unser klassischer Energy Drink mit der perfekten Balance aus Koffein, Taurin und B-Vitaminen.</p>
+        
+        <!-- Add to Cart -->
+        <div class="flex items-center space-x-4">
+          <input type="number" min="1" value="1" class="quantity-input w-20 px-4 py-2 rounded">
+          <button class="add-to-cart bg-blue-600 hover:bg-blue-700 px-8 py-2 rounded-lg transition" 
+                  data-product="Classic" 
+                  data-price="1.99">
+            In den Warenkorb
+          </button>
+        </div>
+
+        <!-- Product Details -->
+        <div class="space-y-4">
+          <h2 class="text-2xl font-bold">Produktdetails</h2>
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <h3 class="font-semibold">Inhaltsstoffe</h3>
+              <ul class="list-disc list-inside text-gray-300">
+                <li>Koffein (32mg/100ml)</li>
+                <li>Taurin</li>
+                <li>B-Vitamine</li>
+                <li>Guarana Extrakt</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="font-semibold">Nährwerte pro 100ml</h3>
+              <ul class="list-disc list-inside text-gray-300">
+                <li>Energie: 45kcal</li>
+                <li>Kohlenhydrate: 11g</li>
+                <li>davon Zucker: 11g</li>
+                <li>Eiweiß: 0g</li>
+                <li>Fett: 0g</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reviews -->
+        <div class="space-y-4">
+          <h2 class="text-2xl font-bold">Kundenbewertungen</h2>
+          <div class="glass-card rounded-xl p-6">
+            <div class="flex items-center mb-4">
+              <div class="text-yellow-400">★★★★★</div>
+              <span class="ml-2">4.8/5 (128 Bewertungen)</span>
+            </div>
+            <div class="space-y-4">
+              <div class="border-b border-gray-700 pb-4">
+                <div class="flex items-center mb-2">
+                  <div class="text-yellow-400">★★★★★</div>
+                  <span class="ml-2 font-semibold">Max M.</span>
+                </div>
+                <p class="text-gray-300">Perfekter Energieschub für den Tag. Schmeckt super und hält lange wach.</p>
+              </div>
+              <div class="border-b border-gray-700 pb-4">
+                <div class="flex items-center mb-2">
+                  <div class="text-yellow-400">★★★★★</div>
+                  <span class="ml-2 font-semibold">Sarah K.</span>
+                </div>
+                <p class="text-gray-300">Mein Lieblings-Energy Drink. Nicht zu süß und perfekt für lange Arbeitstage.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 py-8 mt-12">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p class="text-gray-300">© 2025 Pegasus Power. Alle Rechte vorbehalten.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Cart functionality (same as shop.html)
+    let cart = [];
+    const cartButton = document.getElementById('cartButton');
+    const cartBadge = document.getElementById('cartBadge');
+
+    document.querySelector('.add-to-cart').addEventListener('click', () => {
+      const button = document.querySelector('.add-to-cart');
+      const product = button.dataset.product;
+      const price = parseFloat(button.dataset.price);
+      const quantityInput = document.querySelector('.quantity-input');
+      const quantity = parseInt(quantityInput.value);
+
+      const existingItem = cart.find(item => item.product === product);
+      if (existingItem) {
+        existingItem.quantity += quantity;
+      } else {
+        cart.push({ product, price, quantity });
+      }
+
+      updateCartBadge();
+    });
+
+    function updateCartBadge() {
+      const itemCount = cart.reduce((total, item) => total + item.quantity, 0);
+      cartBadge.textContent = itemCount;
+      cartBadge.classList.toggle('hidden', itemCount === 0);
+    }
+  </script>
+</body>
+</html> 

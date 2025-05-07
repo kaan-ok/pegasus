@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - Pegasus Power</title>
+  
+  <!-- External Resources -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  
+  <!-- Custom Styles -->
+  <style>
+    .bg-pegasus-shop {
+      background: linear-gradient(135deg, #1e3a8a, #6b21a8, #4c1d95);
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .step-active {
+      border-color: #3b82f6;
+      color: #3b82f6;
+    }
+    .step-completed {
+      border-color: #10b981;
+      color: #10b981;
+    }
+  </style>
+</head>
+
+<body class="font-['Inter'] text-white bg-gray-900">
+  <!-- Navigation -->
+  <nav class="bg-pegasus-shop py-4 px-6 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold">Pegasus Power</a>
+      <div class="flex items-center space-x-6">
+        <a href="index.html" class="hover:text-blue-300 transition">Home</a>
+        <a href="shop.html" class="hover:text-blue-300 transition">Shop</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Checkout Process -->
+  <main class="max-w-4xl mx-auto px-4 py-8">
+    <!-- Progress Steps -->
+    <div class="flex justify-between mb-12">
+      <div class="step-active flex flex-col items-center">
+        <div class="w-10 h-10 rounded-full border-2 flex items-center justify-center mb-2">1</div>
+        <span>Warenkorb</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <div class="w-10 h-10 rounded-full border-2 flex items-center justify-center mb-2">2</div>
+        <span>Lieferung</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <div class="w-10 h-10 rounded-full border-2 flex items-center justify-center mb-2">3</div>
+        <span>Zahlung</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <div class="w-10 h-10 rounded-full border-2 flex items-center justify-center mb-2">4</div>
+        <span>Bestätigung</span>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Main Content -->
+      <div class="md:col-span-2 space-y-8">
+        <!-- Step 1: Cart Review -->
+        <div id="step1" class="glass-card rounded-xl p-6">
+          <h2 class="text-2xl font-bold mb-6">Warenkorb</h2>
+          <div id="cartItems" class="space-y-4">
+            <!-- Cart items will be dynamically added here -->
+          </div>
+        </div>
+
+        <!-- Step 2: Delivery -->
+        <div id="step2" class="glass-card rounded-xl p-6 hidden">
+          <h2 class="text-2xl font-bold mb-6">Lieferadresse</h2>
+          <form class="space-y-4">
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium mb-2">Vorname</label>
+                <input type="text" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2">
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-2">Nachname</label>
+                <input type="text" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2">
+              </div>
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-2">Straße und Hausnummer</label>
+              <input type="text" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2">
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium mb-2">PLZ</label>
+                <input type="text" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2">
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-2">Stadt</label>
+                <input type="text" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2">
+              </div>
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-2">Telefon</label>
+              <input type="tel" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2">
+            </div>
+          </form>
+        </div>
+
+        <!-- Step 3: Payment -->
+        <div id="step3" class="glass-card rounded-xl p-6 hidden">
+          <h2 class="text-2xl font-bold mb-6">Zahlungsmethode</h2>
+          <div class="space-y-4">
+            <div class="flex items-center space-x-4 p-4 border border-gray-700 rounded-lg cursor-pointer hover:border-blue-500">
+              <input type="radio" name="payment" id="creditCard" class="w-4 h-4">
+              <label for="creditCard" class="flex-1 cursor-pointer">
+                <div class="font-semibold">Kreditkarte</div>
+                <div class="text-sm text-gray-400">Visa, Mastercard, American Express</div>
+              </label>
+            </div>
+            <div class="flex items-center space-x-4 p-4 border border-gray-700 rounded-lg cursor-pointer hover:border-blue-500">
+              <input type="radio" name="payment" id="paypal" class="w-4 h-4">
+              <label for="paypal" class="flex-1 cursor-pointer">
+                <div class="font-semibold">PayPal</div>
+                <div class="text-sm text-gray-400">Schnell und sicher</div>
+              </label>
+            </div>
+            <div class="flex items-center space-x-4 p-4 border border-gray-700 rounded-lg cursor-pointer hover:border-blue-500">
+              <input type="radio" name="payment" id="bankTransfer" class="w-4 h-4">
+              <label for="bankTransfer" class="flex-1 cursor-pointer">
+                <div class="font-semibold">Überweisung</div>
+                <div class="text-sm text-gray-400">Vorauskasse</div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 4: Confirmation -->
+        <div id="step4" class="glass-card rounded-xl p-6 hidden">
+          <h2 class="text-2xl font-bold mb-6">Bestellung bestätigen</h2>
+          <div class="space-y-4">
+            <p class="text-gray-300">Bitte überprüfen Sie Ihre Bestellung und klicken Sie auf "Bestellung abschließen".</p>
+            <div class="bg-gray-800 rounded-lg p-4">
+              <h3 class="font-semibold mb-2">Zusammenfassung</h3>
+              <div id="orderSummary" class="space-y-2">
+                <!-- Order summary will be dynamically added here -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Order Summary -->
+      <div class="md:col-span-1">
+        <div class="glass-card rounded-xl p-6 sticky top-24">
+          <h2 class="text-xl font-bold mb-4">Zusammenfassung</h2>
+          <div class="space-y-4">
+            <div class="flex justify-between">
+              <span>Zwischensumme</span>
+              <span id="subtotal">€0.00</span>
+            </div>
+            <div class="flex justify-between">
+              <span>Versand</span>
+              <span id="shipping">€4.99</span>
+            </div>
+            <div class="border-t border-gray-700 pt-4">
+              <div class="flex justify-between font-bold">
+                <span>Gesamt</span>
+                <span id="total">€0.00</span>
+              </div>
+            </div>
+            <button id="nextStep" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg transition">
+              Weiter
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 py-8 mt-12">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p class="text-gray-300">© 2025 Pegasus Power. Alle Rechte vorbehalten.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    let currentStep = 1;
+    const nextStepButton = document.getElementById('nextStep');
+    const steps = document.querySelectorAll('[id^="step"]');
+    const progressSteps = document.querySelectorAll('.flex.flex-col.items-center');
+
+    // Initialize cart from localStorage
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    updateCartDisplay();
+
+    function updateCartDisplay() {
+      const cartItems = document.getElementById('cartItems');
+      const subtotal = document.getElementById('subtotal');
+      const total = document.getElementById('total');
+      
+      cartItems.innerHTML = '';
+      let cartTotal = 0;
+
+      cart.forEach(item => {
+        const itemTotal = item.price * item.quantity;
+        cartTotal += itemTotal;
+
+        const itemElement = document.createElement('div');
+        itemElement.className = 'flex justify-between items-center';
+        itemElement.innerHTML = `
+          <div>
+            <h4 class="font-semibold">${item.product}</h4>
+            <p class="text-sm text-gray-400">${item.quantity} x €${item.price.toFixed(2)}</p>
+          </div>
+          <span>€${itemTotal.toFixed(2)}</span>
+        `;
+        cartItems.appendChild(itemElement);
+      });
+
+      const shipping = 4.99;
+      subtotal.textContent = `€${cartTotal.toFixed(2)}`;
+      total.textContent = `€${(cartTotal + shipping).toFixed(2)}`;
+    }
+
+    function updateStepDisplay() {
+      steps.forEach((step, index) => {
+        step.classList.toggle('hidden', index + 1 !== currentStep);
+      });
+
+      progressSteps.forEach((step, index) => {
+        step.classList.remove('step-active', 'step-completed');
+        if (index + 1 === currentStep) {
+          step.classList.add('step-active');
+        } else if (index + 1 < currentStep) {
+          step.classList.add('step-completed');
+        }
+      });
+
+      nextStepButton.textContent = currentStep === 4 ? 'Bestellung abschließen' : 'Weiter';
+    }
+
+    nextStepButton.addEventListener('click', () => {
+      if (currentStep < 4) {
+        currentStep++;
+        updateStepDisplay();
+      } else {
+        // Process order
+        alert('Vielen Dank für Ihre Bestellung!');
+        localStorage.removeItem('cart');
+        window.location.href = 'index.html';
+      }
+    });
+  </script>
+</body>
+</html> 
