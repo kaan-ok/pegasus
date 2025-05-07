@@ -93,14 +93,29 @@
               <label class="block text-sm font-medium mb-2">Straße und Hausnummer</label>
               <input type="text" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2">
             </div>
-            <div class="grid grid-cols-2 gap-4">
+            <div class="space-y-4">
               <div>
-                <label class="block text-sm font-medium mb-2">PLZ</label>
-                <input type="text" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2">
+                <label class="block text-sm font-medium mb-1">PLZ</label>
+                <input type="text" class="w-full px-4 py-2 rounded-lg bg-gray-800 border border-gray-700" required pattern="[0-9]{4}" title="Bitte geben Sie eine gültige österreichische Postleitzahl ein (4 Ziffern)">
               </div>
               <div>
-                <label class="block text-sm font-medium mb-2">Stadt</label>
-                <input type="text" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2">
+                <label class="block text-sm font-medium mb-1">Ort</label>
+                <input type="text" class="w-full px-4 py-2 rounded-lg bg-gray-800 border border-gray-700" required>
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1">Bundesland</label>
+                <select class="w-full px-4 py-2 rounded-lg bg-gray-800 border border-gray-700" required>
+                  <option value="">Bitte wählen</option>
+                  <option value="Wien">Wien</option>
+                  <option value="Niederösterreich">Niederösterreich</option>
+                  <option value="Oberösterreich">Oberösterreich</option>
+                  <option value="Salzburg">Salzburg</option>
+                  <option value="Tirol">Tirol</option>
+                  <option value="Vorarlberg">Vorarlberg</option>
+                  <option value="Kärnten">Kärnten</option>
+                  <option value="Steiermark">Steiermark</option>
+                  <option value="Burgenland">Burgenland</option>
+                </select>
               </div>
             </div>
             <div>
@@ -223,7 +238,9 @@
         cartItems.appendChild(itemElement);
       });
 
-      const shipping = 4.99;
+      // Versandkosten für Österreich
+      const shipping = 4.99; // Standardversand innerhalb Österreichs
+      const expressShipping = 7.99; // Expressversand innerhalb Österreichs
       subtotal.textContent = `€${cartTotal.toFixed(2)}`;
       total.textContent = `€${(cartTotal + shipping).toFixed(2)}`;
     }
